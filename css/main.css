@@ -9,6 +9,10 @@ body {
   background-color: #343A40;
 }
 
+.active {
+  display: block !important;
+}
+
 .tooltip-icons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,9 +169,5 @@ body {
 
 .modal__close:hover {
   background-color: #d42b11;
-}
-
-.active {
-  display: block;
 }
 /*# sourceMappingURL=main.css.map */

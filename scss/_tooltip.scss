@@ -1,0 +1,16 @@
+.tooltip-icons {
+    display: flex;
+    justify-content: flex-end;
+
+    .fas {
+        color: white;
+        margin: 10px 8px 0 4px;
+        padding: 2px;
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+}

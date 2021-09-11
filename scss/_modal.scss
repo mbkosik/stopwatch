@@ -1,0 +1,45 @@
+.shadow__modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.24);
+    display: none;
+}
+
+.modal {
+    background-color: rgb(245, 245, 245);
+    position: absolute; 
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
+    min-height: 150px;
+    border-radius: 8px;
+    padding: 20px;
+
+    &__title {
+        margin-bottom: 15px;
+    }
+
+    p {
+        text-indent: 5px;
+        line-height: 20px;
+    }
+
+    &__close {
+        display: block;
+        margin: 10px auto;
+        padding: 5px 30px;
+        background-color: $main-color;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($main-color, 15%);
+        }
+    }
+}
+
