@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+:root {
+  --main-color: #F05941;
+}
+
 body {
   font-family: "Glory", sans-serif;
   background-color: #343A40;
@@ -31,7 +35,7 @@ body {
 }
 
 .tooltip-icons .fas:hover {
-  color: #F05941;
+  color: var(--main-color);
 }
 
 .stopwatch {
@@ -68,11 +72,12 @@ body {
 
 .stopwatch__time {
   margin: 20px 0 10px 0;
-  color: #F05941;
+  color: var(--main-color);
   font-size: 34px;
 }
 
 .stopwatch__time--saved {
+  display: none;
   color: white;
   font-size: 12px;
 }
@@ -101,16 +106,16 @@ body {
   cursor: pointer;
   border-style: solid;
   border-width: 2px;
-  -o-border-image: linear-gradient(#F05941, #1B1717) 1;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#F05941), to(#1B1717)) 1;
-     border-image: linear-gradient(#F05941, #1B1717) 1;
+  -o-border-image: linear-gradient(var(--main-color), #1B1717) 1;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(var(--main-color)), to(#1B1717)) 1;
+     border-image: linear-gradient(var(--main-color), #1B1717) 1;
 }
 
 .stopwatch__buttons-btn:hover, .stopwatch__buttons-btn:focus {
-  color: #F05941;
-  -o-border-image: linear-gradient(#1B1717, #F05941) 1;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#1B1717), to(#F05941)) 1;
-     border-image: linear-gradient(#1B1717, #F05941) 1;
+  color: var(--main-color);
+  -o-border-image: linear-gradient(#1B1717, var(--main-color)) 1;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#1B1717), to(var(--main-color))) 1;
+     border-image: linear-gradient(#1B1717, var(--main-color)) 1;
   outline: none;
 }
 
@@ -121,6 +126,7 @@ body {
 }
 
 .stopwatch__time-list {
+  display: none;
   color: white;
   font-size: 12px;
 }
@@ -159,7 +165,7 @@ body {
   display: block;
   margin: 10px auto;
   padding: 5px 30px;
-  background-color: #F05941;
+  background-color: var(--main-color);
   border: none;
   border-radius: 6px;
   color: white;
@@ -168,6 +174,7 @@ body {
 }
 
 .modal__close:hover {
-  background-color: #d42b11;
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
 }
 /*# sourceMappingURL=main.css.map */

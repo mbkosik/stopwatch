@@ -30,7 +30,7 @@
         display: block;
         margin: 10px auto;
         padding: 5px 30px;
-        background-color: $main-color;
+        background-color: var(--main-color);
         border: none;
         border-radius: 6px;
         color: white;
@@ -38,7 +38,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: darken($main-color, 15%);
+            filter: brightness(85%);
         }
     }
 }

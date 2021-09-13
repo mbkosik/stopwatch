@@ -23,10 +23,11 @@
 
     &__time {
         margin: 20px 0 10px 0;
-        color: $main-color; 
+        color: var(--main-color); 
         font-size: 34px;
 
         &--saved {
+            display: none; 
             color: white;
             font-size: 12px;
         }
@@ -49,11 +50,11 @@
             cursor: pointer;
             border-style: solid;
             border-width: 2px;
-            border-image: linear-gradient($main-color, $radial-secondary-color) 1;
+            border-image: linear-gradient(var(--main-color), $radial-secondary-color) 1;
 
             &:hover, &:focus {
-                color: $main-color;
-                border-image: linear-gradient($radial-secondary-color, $main-color) 1;
+                color: var(--main-color);
+                border-image: linear-gradient($radial-secondary-color, var(--main-color)) 1;
                 outline: none;
             }
         }
@@ -64,6 +65,7 @@
     }
 
     &__time-list {
+        display: none; 
         color: white;
         font-size: 12px; 
     }

@@ -10,7 +10,7 @@
         cursor: pointer;
 
         &:hover {
-            color: $main-color;
+            color: var(--main-color);
         }
     }
 }
