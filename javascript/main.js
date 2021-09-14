@@ -35,21 +35,7 @@ function startCount() {
 function pauseCount() {
     if (play === true) {
         pause = true; 
-        if (currentMin <= 9) {
-            timeSavedMin.textContent = `0${currentMin}`
-        } else {
-            timeSavedMin.textContent = currentMin;
-        }
-
-        if (currentSec <= 9) {
-            timeSavedSec.textContent = `0${currentSec}`
-        } else {
-            timeSavedSec.textContent = currentSec;
-        }
-        savedTime.classList.add("active");
-        let newListElement = document.createElement("li");
-        newListElement.textContent = savedTime.textContent;
-        timeList.appendChild(newListElement); 
+        saveTime();
     } else {
         return; 
     }
@@ -58,6 +44,7 @@ function pauseCount() {
 function stopCount() {
     if (play === true) {
         stop = true; 
+        saveTime(); 
     } else {
         stop = true;
         startCount(); 
@@ -77,13 +64,31 @@ function showArchive() {
     timeList.classList.add("active");
 }
 
+function saveTime() {
+    if (currentMin <= 9) {
+        timeSavedMin.textContent = `0${currentMin}`
+    } else {
+        timeSavedMin.textContent = currentMin;
+    }
+
+    if (currentSec <= 9) {
+        timeSavedSec.textContent = `0${currentSec}`
+    } else {
+        timeSavedSec.textContent = currentSec;
+    }
+    savedTime.classList.add("active");
+    let newListElement = document.createElement("li");
+    newListElement.textContent = savedTime.textContent;
+    timeList.appendChild(newListElement); 
+    currentSec = 0; 
+    currentMin = 0; 
+}
+
 const counting = () => {
 
     if (pause === true) {
         pause = false; 
         play = false; 
-        currentSec = 0; 
-        currentMin = 0; 
         return; 
     }
 
@@ -141,7 +146,7 @@ const modal = document.querySelector(".shadow__modal");
 const showModal = (e) => {
     if (e.target === infoBtn) {
         modal.classList.add("active");
-    } else if (e.target === modalCloseBtn) {
+    } else if (e.target === modalCloseBtn || e.target === modal) {
         modal.classList.remove("active");
     }
 }
