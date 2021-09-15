@@ -4,7 +4,8 @@ const stopBtn = document.querySelector(".stopwatch__buttons--stop");
 const clearBtn = document.querySelector(".stopwatch__buttons--clear");
 const archiveBtn = document.querySelector(".stopwatch__buttons--archive");
 
-const savedTime = document.querySelector(".stopwatch__time--saved")
+const fullTime = document.querySelector(".stopwatch__time--current");
+const savedTime = document.querySelector(".stopwatch__time--saved");
 const timeList = document.querySelector(".stopwatch__time-list");
 
 const timeCounterSec = document.querySelector(".stopwatch__time--current span.s");
@@ -18,6 +19,8 @@ let timeMin = 0;
 
 let currentMin = 0; 
 let currentSec = 0; 
+
+let stage = 0; 
 
 let play = false;
 let pause = false;
@@ -65,6 +68,7 @@ function showArchive() {
 }
 
 function saveTime() {
+    stage++;
     if (currentMin <= 9) {
         timeSavedMin.textContent = `0${currentMin}`
     } else {
@@ -78,10 +82,15 @@ function saveTime() {
     }
     savedTime.classList.add("active");
     let newListElement = document.createElement("li");
-    newListElement.textContent = savedTime.textContent;
+    newListElement.innerHTML = `<strong>Etap ${stage}</strong> ${savedTime.textContent}`;
     timeList.appendChild(newListElement); 
     currentSec = 0; 
     currentMin = 0; 
+    if (stop === true) {
+        let fullTimeElement = document.createElement("li");
+        fullTimeElement.innerHTML = `<strong>Pełny czas</strong> ${fullTime.textContent}`
+        timeList.appendChild(fullTimeElement);
+    }
 }
 
 const counting = () => {
@@ -99,6 +108,7 @@ const counting = () => {
         timeMin = 0; 
         timeCounterMin.textContent = "00";
         timeCounterSec.textContent = "00";
+        stage = 0;
         return; 
     }
 
