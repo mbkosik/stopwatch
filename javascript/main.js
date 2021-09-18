@@ -69,12 +69,7 @@ function showArchive() {
 
 function saveTime() {
     stage++;
-    if (currentMin <= 9) {
-        timeSavedMin.textContent = `0${currentMin}`
-    } else {
-        timeSavedMin.textContent = currentMin;
-    }
-
+    timeSavedMin.textContent = currentMin;
     if (currentSec <= 9) {
         timeSavedSec.textContent = `0${currentSec}`
     } else {
@@ -117,11 +112,7 @@ const counting = () => {
     if (timeSec === 59) {
         timeSec = -1;
         timeMin++;
-        if (timeMin <= 9) {
-            timeCounterMin.textContent = `0${timeMin}`
-        } else {
-            timeCounterMin.textContent = timeMin;
-        }
+        timeCounterMin.textContent = timeMin;
     }
 
     if (currentSec == 59) {
@@ -137,7 +128,7 @@ const counting = () => {
         timeCounterSec.textContent = timeSec;
     }
 
-    setTimeout(counting, 500)
+    setTimeout(counting, 250)
 }
 
 
